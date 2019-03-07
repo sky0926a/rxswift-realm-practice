@@ -13,6 +13,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+//        let parameters: [String: Any] = ["territory": "TW",
+//                                         "offset": 0,
+//                                         "limit": 500]
+//        API.shared.getJSON(.playlists, parameters: parameters, headers: nil)
+        
+        User.current.getToken()
     }
 
 

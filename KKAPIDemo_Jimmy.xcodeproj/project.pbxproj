@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		033839272230E51900F249DB /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033839262230E51900F249DB /* API.swift */; };
+		033839292230E66500F249DB /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033839282230E66500F249DB /* APIConfig.swift */; };
+		0338392D22310F9A00F249DB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0338392C22310F9A00F249DB /* User.swift */; };
 		03DA8904222D0C5000A3366E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DA8903222D0C5000A3366E /* AppDelegate.swift */; };
 		03DA8906222D0C5000A3366E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DA8905222D0C5000A3366E /* ViewController.swift */; };
 		03DA8909222D0C5000A3366E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03DA8907222D0C5000A3366E /* Main.storyboard */; };
@@ -37,6 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		033839262230E51900F249DB /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		033839282230E66500F249DB /* APIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
+		0338392C22310F9A00F249DB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		03DA8900222D0C5000A3366E /* KKAPIDemo_Jimmy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KKAPIDemo_Jimmy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03DA8903222D0C5000A3366E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03DA8905222D0C5000A3366E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +95,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0338392A2230E66800F249DB /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				0338392B2230E68700F249DB /* API */,
+				0338392E22310FA400F249DB /* User */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		0338392B2230E68700F249DB /* API */ = {
+			isa = PBXGroup;
+			children = (
+				033839282230E66500F249DB /* APIConfig.swift */,
+				033839262230E51900F249DB /* API.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		0338392E22310FA400F249DB /* User */ = {
+			isa = PBXGroup;
+			children = (
+				0338392C22310F9A00F249DB /* User.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
 		03DA88F7222D0C5000A3366E = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				03DA8903222D0C5000A3366E /* AppDelegate.swift */,
+				0338392A2230E66800F249DB /* Utils */,
 				03DA8905222D0C5000A3366E /* ViewController.swift */,
 				03DA8907222D0C5000A3366E /* Main.storyboard */,
 				03DA890A222D0C5100A3366E /* Assets.xcassets */,
@@ -162,7 +195,6 @@
 				7DE386531639F0A820D4E68F /* Pods-KKAPIDemo_JimmyUITests.debug.xcconfig */,
 				92780685E965C02CE7EF52C0 /* Pods-KKAPIDemo_JimmyUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -409,6 +441,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				03DA8906222D0C5000A3366E /* ViewController.swift in Sources */,
+				033839272230E51900F249DB /* API.swift in Sources */,
+				033839292230E66500F249DB /* APIConfig.swift in Sources */,
+				0338392D22310F9A00F249DB /* User.swift in Sources */,
 				03DA8904222D0C5000A3366E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -592,7 +627,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "jimmy.kkapi.demo.KKAPIDemo-Jimmy";
+				PRODUCT_BUNDLE_IDENTIFIER = jimmy.kkapi.demo.KKAPIDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -611,7 +646,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "jimmy.kkapi.demo.KKAPIDemo-Jimmy";
+				PRODUCT_BUNDLE_IDENTIFIER = jimmy.kkapi.demo.KKAPIDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
