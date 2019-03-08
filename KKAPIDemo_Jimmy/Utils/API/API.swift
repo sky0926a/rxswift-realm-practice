@@ -12,6 +12,7 @@ import RxCocoa
 
 public typealias HTTPHeaders = [String: String]
 public typealias Parameters = [String: Any]
+public typealias JSON = Any
 
 enum APIError: Error {
     case failed
@@ -71,9 +72,9 @@ class API {
     
     static let shared: API = API()
     
-    func get(_ action: APIAction.GET, parameters: Parameters? = nil, headers: HTTPHeaders?) -> Single<[String: Any]> {
-        return Single<[String: Any]>.create(subscribe: { (single) -> Disposable in
-            var parameter: [String : Any] = [:]
+    func get(_ action: APIAction.GET, parameters: Parameters? = nil, headers: HTTPHeaders?) -> Single<JSON> {
+        return Single<JSON>.create(subscribe: { (single) -> Disposable in
+            var parameter: Parameters = [:]
             if let merge = parameters {
                 parameter.merge(merge) { (_, new) -> Any in new }
             }
@@ -88,8 +89,12 @@ class API {
                             single(.error(APIError.failed))
                             return
                         }
-                        let dict: [String: Any] = try! JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as! [String : Any]
-                        single(.success(dict))
+                        if let dict = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) {
+                            single(.success(dict))
+                        }
+                        else {
+                            single(.error(APIError.failed))
+                        }
                     }
                 }
                 task.resume()
@@ -102,9 +107,9 @@ class API {
         })
     }
     
-    func post(_ action: APIAction.POST, parameters: Parameters? = nil, body: Parameters?, headers: HTTPHeaders?) -> Single<[String: Any]> {
-        return Single<[String: Any]>.create(subscribe: { (single) -> Disposable in
-            var parameter: [String : Any] = [:]
+    func post(_ action: APIAction.POST, parameters: Parameters? = nil, body: Parameters?, headers: HTTPHeaders?) -> Single<JSON> {
+        return Single<JSON>.create(subscribe: { (single) -> Disposable in
+            var parameter: Parameters = [:]
             if let merge = parameters {
                 parameter.merge(merge) { (_, new) -> Any in new }
             }
@@ -119,8 +124,12 @@ class API {
                             single(.error(APIError.failed))
                             return
                         }
-                        let dict: [String: Any] = try! JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as! [String : Any]
-                        single(.success(dict))
+                        if let dict = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) {
+                            single(.success(dict))
+                        }
+                        else {
+                            single(.error(APIError.failed))
+                        }
                     }
                 }
                 task.resume()

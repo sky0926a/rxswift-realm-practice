@@ -10,8 +10,16 @@
 		033839272230E51900F249DB /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033839262230E51900F249DB /* API.swift */; };
 		033839292230E66500F249DB /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033839282230E66500F249DB /* APIConfig.swift */; };
 		0338392D22310F9A00F249DB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0338392C22310F9A00F249DB /* User.swift */; };
+		038727F02232469000EB5A65 /* ViewControllerFlowProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038727EF2232469000EB5A65 /* ViewControllerFlowProtocol.swift */; };
+		038727F322324CE700EB5A65 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038727F222324CE700EB5A65 /* TabBarViewController.swift */; };
+		038727F82232580E00EB5A65 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038727F72232580E00EB5A65 /* Playlist.swift */; };
+		038727FB22325A1800EB5A65 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038727FA22325A1800EB5A65 /* ViewModel.swift */; };
+		038727FE22326D9700EB5A65 /* PlaylistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038727FC22326D9700EB5A65 /* PlaylistTableViewCell.swift */; };
+		038727FF22326D9700EB5A65 /* PlaylistTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 038727FD22326D9700EB5A65 /* PlaylistTableViewCell.xib */; };
+		0387280322327E9900EB5A65 /* PlayListDetialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0387280122327E9900EB5A65 /* PlayListDetialViewController.swift */; };
+		0387280422327E9900EB5A65 /* PlayListDetialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0387280222327E9900EB5A65 /* PlayListDetialViewController.xib */; };
 		03DA8904222D0C5000A3366E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DA8903222D0C5000A3366E /* AppDelegate.swift */; };
-		03DA8906222D0C5000A3366E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DA8905222D0C5000A3366E /* ViewController.swift */; };
+		03DA8906222D0C5000A3366E /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DA8905222D0C5000A3366E /* PlaylistViewController.swift */; };
 		03DA8909222D0C5000A3366E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03DA8907222D0C5000A3366E /* Main.storyboard */; };
 		03DA890B222D0C5100A3366E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03DA890A222D0C5100A3366E /* Assets.xcassets */; };
 		03DA890E222D0C5100A3366E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03DA890C222D0C5100A3366E /* LaunchScreen.storyboard */; };
@@ -43,9 +51,17 @@
 		033839262230E51900F249DB /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		033839282230E66500F249DB /* APIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
 		0338392C22310F9A00F249DB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		038727EF2232469000EB5A65 /* ViewControllerFlowProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFlowProtocol.swift; sourceTree = "<group>"; };
+		038727F222324CE700EB5A65 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		038727F72232580E00EB5A65 /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
+		038727FA22325A1800EB5A65 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		038727FC22326D9700EB5A65 /* PlaylistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistTableViewCell.swift; sourceTree = "<group>"; };
+		038727FD22326D9700EB5A65 /* PlaylistTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaylistTableViewCell.xib; sourceTree = "<group>"; };
+		0387280122327E9900EB5A65 /* PlayListDetialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListDetialViewController.swift; sourceTree = "<group>"; };
+		0387280222327E9900EB5A65 /* PlayListDetialViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayListDetialViewController.xib; sourceTree = "<group>"; };
 		03DA8900222D0C5000A3366E /* KKAPIDemo_Jimmy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KKAPIDemo_Jimmy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03DA8903222D0C5000A3366E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		03DA8905222D0C5000A3366E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		03DA8905222D0C5000A3366E /* PlaylistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistViewController.swift; sourceTree = "<group>"; };
 		03DA8908222D0C5000A3366E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		03DA890A222D0C5100A3366E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		03DA890D222D0C5100A3366E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -98,6 +114,7 @@
 		0338392A2230E66800F249DB /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				038727F12232469700EB5A65 /* Protocol */,
 				0338392B2230E68700F249DB /* API */,
 				0338392E22310FA400F249DB /* User */,
 			);
@@ -119,6 +136,44 @@
 				0338392C22310F9A00F249DB /* User.swift */,
 			);
 			path = User;
+			sourceTree = "<group>";
+		};
+		038727F12232469700EB5A65 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				038727EF2232469000EB5A65 /* ViewControllerFlowProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		038727F422324CF500EB5A65 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				038727F222324CE700EB5A65 /* TabBarViewController.swift */,
+				0387280022326D9E00EB5A65 /* PlaylistViewController */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		038727F9223259E300EB5A65 /* DataStruct */ = {
+			isa = PBXGroup;
+			children = (
+				038727F72232580E00EB5A65 /* Playlist.swift */,
+			);
+			path = DataStruct;
+			sourceTree = "<group>";
+		};
+		0387280022326D9E00EB5A65 /* PlaylistViewController */ = {
+			isa = PBXGroup;
+			children = (
+				038727FA22325A1800EB5A65 /* ViewModel.swift */,
+				03DA8905222D0C5000A3366E /* PlaylistViewController.swift */,
+				038727FC22326D9700EB5A65 /* PlaylistTableViewCell.swift */,
+				038727FD22326D9700EB5A65 /* PlaylistTableViewCell.xib */,
+				0387280122327E9900EB5A65 /* PlayListDetialViewController.swift */,
+				0387280222327E9900EB5A65 /* PlayListDetialViewController.xib */,
+			);
+			path = PlaylistViewController;
 			sourceTree = "<group>";
 		};
 		03DA88F7222D0C5000A3366E = {
@@ -148,7 +203,8 @@
 			children = (
 				03DA8903222D0C5000A3366E /* AppDelegate.swift */,
 				0338392A2230E66800F249DB /* Utils */,
-				03DA8905222D0C5000A3366E /* ViewController.swift */,
+				038727F9223259E300EB5A65 /* DataStruct */,
+				038727F422324CF500EB5A65 /* ViewController */,
 				03DA8907222D0C5000A3366E /* Main.storyboard */,
 				03DA890A222D0C5100A3366E /* Assets.xcassets */,
 				03DA890C222D0C5100A3366E /* LaunchScreen.storyboard */,
@@ -308,7 +364,9 @@
 			files = (
 				03DA890E222D0C5100A3366E /* LaunchScreen.storyboard in Resources */,
 				03DA890B222D0C5100A3366E /* Assets.xcassets in Resources */,
+				0387280422327E9900EB5A65 /* PlayListDetialViewController.xib in Resources */,
 				03DA8909222D0C5000A3366E /* Main.storyboard in Resources */,
+				038727FF22326D9700EB5A65 /* PlaylistTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,9 +498,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03DA8906222D0C5000A3366E /* ViewController.swift in Sources */,
+				038727F02232469000EB5A65 /* ViewControllerFlowProtocol.swift in Sources */,
+				038727FB22325A1800EB5A65 /* ViewModel.swift in Sources */,
+				0387280322327E9900EB5A65 /* PlayListDetialViewController.swift in Sources */,
+				038727F82232580E00EB5A65 /* Playlist.swift in Sources */,
+				03DA8906222D0C5000A3366E /* PlaylistViewController.swift in Sources */,
 				033839272230E51900F249DB /* API.swift in Sources */,
+				038727FE22326D9700EB5A65 /* PlaylistTableViewCell.swift in Sources */,
 				033839292230E66500F249DB /* APIConfig.swift in Sources */,
+				038727F322324CE700EB5A65 /* TabBarViewController.swift in Sources */,
 				0338392D22310F9A00F249DB /* User.swift in Sources */,
 				03DA8904222D0C5000A3366E /* AppDelegate.swift in Sources */,
 			);

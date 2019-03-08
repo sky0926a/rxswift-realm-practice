@@ -6,10 +6,7 @@
 //  Copyright © 2019 Jimmy Li. All rights reserved.
 //
 
-let appID = "a492682e320074df920c10f06f64725c"
-let appSecret = "8a5074250bf43560e83a527bb803fc9c"
-
-protocol APIActionProtocol {
+protocol APIActionProtocol { 
     var suffix: String { get }
     var urlString: String { get }
     var method: String { get }
@@ -48,7 +45,7 @@ extension APIServiceType {
 enum APIAction {
     //MARK: GET
     enum GET {
-        case playlists
+        case playlists(id: String?)
         case category
     }
     //MARK: POST
@@ -64,8 +61,13 @@ extension APIAction.GET: APIActionProtocol {
     
     var suffix : String {
         switch self {
-        case .playlists:
-            return "featured-playlists"
+        case .playlists(let id):
+            if let id: String = id, !id.isEmpty {
+                return "featured-playlists/" + id
+            }
+            else {
+                return "featured-playlists"
+            }
         case .category:
             return "featured-playlist-categories"
         }
@@ -103,8 +105,3 @@ enum APIResult {
     case success(result: [String: Any])
     case failed
 }
-
-//public enum MultipartFormDataEncodingResult {
-//    case success(request: UploadRequest, streamingFromDisk: Bool, streamFileURL: URL?)
-//    case failure(Error)
-//}
