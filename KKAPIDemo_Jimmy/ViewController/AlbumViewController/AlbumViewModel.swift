@@ -76,8 +76,15 @@ class AlbumViewModel {
     }
     
     func updateSelectedResult(with status: Bool, handler: RealmHandler?){
-        RealmManager.db.update(write: { (db) in
-            input.model.isFavorited = status
-        }, handler: handler)
+        if let model = fetchFollowObject(by: input.model) {
+            RealmManager.db.update(write: { (db) in
+                model.isFavorited = status
+            }, handler: handler)
+        }
+        else {
+            input.model.isFavorited = true
+            RealmManager.db.add(input.model, handler: handler)
+        }
+        
     }
 }

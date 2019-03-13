@@ -39,7 +39,7 @@ class PlaylistViewModel: NSObject {
     func getPlayList() {
         let fetch: Single<PlayList> = User.current.fetchPlayList()
         _ = fetch.subscribe(onSuccess: { [weak self] (list) in
-            _ = RealmManager.db.add(list.data)
+//            _ = RealmManager.db.add(list.data)
             self?.dataListRelay.accept([SectionModel.init(model: "PlayList", items: list.data)])
         }, onError: nil)
     }
@@ -47,7 +47,7 @@ class PlaylistViewModel: NSObject {
     func getTrackList() {
         let fetch: Single<TracksModel> = User.current.fetchPlayList(input.id)
         _ = fetch.subscribe(onSuccess: { [weak self] (list) in
-            _ = RealmManager.db.add(list.tracks.data)
+//            _ = RealmManager.db.add(list.tracks.data)
             self?.dataListRelay.accept([SectionModel.init(model: "Tracks", items: list.tracks.data)])
             }, onError: nil)
     }
