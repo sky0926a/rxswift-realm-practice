@@ -45,16 +45,16 @@ extension User {
         }
     }
     
-    func getPlayList(_ id: String? = nil) -> Single<JSON> {
-        return Single<JSON>.create(subscribe: { (single) -> Disposable in
+    func fetchPlayList<T: Codable>(_ id: String? = nil) -> Single<T> {
+        return Single<T>.create(subscribe: { (single) -> Disposable in
             _ = User.current.getToken().asObservable().map({ (result) -> Bool in
                 return !result.isEmpty
             }).bind(onNext: { [weak self] (hasToken) in
-                if hasToken {
-                    _ = self?.fetchServerPlaylist(id).subscribe(onSuccess: { (result) in
+                if hasToken, let weakself = self {
+                    _ = weakself.fetchServerPlaylist(id).subscribe(onSuccess: { (result) in
                         single(.success(result))
-                    }, onError: { (error) in
-                        single(.error(error))
+                    }, onError: { (err) in
+                        single(.error(err))
                     })
                 }
             })
@@ -81,16 +81,12 @@ extension User {
             })
     }
     
-    func fetchServerPlaylist(_ id: String? = nil) -> Single<JSON> {
+    func fetchServerPlaylist<T: Codable>(_ id: String? = nil) -> Single<T> {
         let header: HTTPHeaders = ["Authorization": "Bearer \(APIToken)"]
         let parameters: Parameters = ["territory": "TW",
                                       "offset": 0,
                                       "limit": 500]
         return API.shared.get(.playlists(id: id), parameters: parameters, headers: header)
-            .map({ (json) -> JSON in
-                print(json)
-                return json
-            })
     }
 }
 

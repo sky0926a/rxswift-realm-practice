@@ -72,8 +72,8 @@ class API {
     
     static let shared: API = API()
     
-    func get(_ action: APIAction.GET, parameters: Parameters? = nil, headers: HTTPHeaders?) -> Single<JSON> {
-        return Single<JSON>.create(subscribe: { (single) -> Disposable in
+    func get<T: Codable>(_ action: APIAction.GET, parameters: Parameters? = nil, headers: HTTPHeaders?) -> Single<T> {
+        return Single<T>.create(subscribe: { (single) -> Disposable in
             var parameter: Parameters = [:]
             if let merge = parameters {
                 parameter.merge(merge) { (_, new) -> Any in new }
@@ -89,7 +89,7 @@ class API {
                             single(.error(APIError.failed))
                             return
                         }
-                        if let dict = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) {
+                        if let dict = try? JSONDecoder().decode(T.self, from: data) {
                             single(.success(dict))
                         }
                         else {

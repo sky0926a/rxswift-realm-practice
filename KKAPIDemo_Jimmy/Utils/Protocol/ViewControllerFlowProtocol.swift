@@ -15,4 +15,5 @@ import Foundation
     @objc optional func setupLayout()
     @objc optional func reloadView()
     @objc optional func emptyData()
+    @objc optional func binding()
 }

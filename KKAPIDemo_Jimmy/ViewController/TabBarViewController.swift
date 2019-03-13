@@ -8,36 +8,43 @@
 
 import UIKit
 
-enum TabBarType: Int {
+enum ViewControllerType: Int {
     case playlist = 0
     case favorite = 1
+    case tracks = 2
 }
 
-extension TabBarType {
+extension ViewControllerType {
     var title: String {
         switch self {
         case .playlist:
             return "Playlist"
         case .favorite:
             return "Favorite"
+        case .tracks:
+            return "Tracks"
         }
     }
 }
 
 class TabBarViewController: UITabBarController {
 
-    
+    var tabTypes: [ViewControllerType] = [.playlist, .favorite]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if let viewControllers = viewControllers {
-            for item in viewControllers.enumerated() {
-                if let tabBarType: TabBarType = TabBarType.init(rawValue: item.offset) {
-                    item.element.tabBarItem.title = tabBarType.title
-                }
-            }
+        
+        var controllers: [UIViewController] = []
+        
+        for aType in tabTypes {
+            let controller: PlaylistViewController = PlaylistViewController(type: aType)
+            controller.title = aType.title
+            let nav: UINavigationController = UINavigationController(rootViewController: controller)
+            nav.tabBarItem.title = aType.title
+            controllers.append(nav)
         }
+        
+        self.viewControllers = controllers
         
         // Do any additional setup after loading the view.
     }
