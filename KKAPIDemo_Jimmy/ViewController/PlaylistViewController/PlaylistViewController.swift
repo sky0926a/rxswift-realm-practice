@@ -48,14 +48,14 @@ class PlaylistViewController: UIViewController {
             }
         }
         
-        reloadHandler = {
+        reloadHandler = { [weak self] in
             switch type {
             case .playlist:
                 break
             case .tracks:
                 break
             case .favorite:
-                self.viewModel.getFavorite()
+                self?.viewModel.getFavorite()
             }
         }
     }
@@ -120,9 +120,9 @@ extension PlaylistViewController: ViewControllerFlowProtocol {
     private func setupTrackList(_ local: Bool) {
         contentTableView.rx
             .modelSelected(TracksListModel.self)
-            .subscribe(onNext: {item in
+            .subscribe(onNext: { [weak self] item in
             let controller: AlbumViewController = AlbumViewController(resource: item)
-            self.navigationController?.pushViewController(controller, animated: true)
+            self?.navigationController?.pushViewController(controller, animated: true)
         }).disposed(by: disposeBag)
     }
 }
